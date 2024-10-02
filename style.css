@@ -275,3 +275,255 @@ body {
     /* background: #0ef; */
     transform: translateY(-10px);
 }
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container1{
+    width: 600px;
+    height: 500px;
+    padding: 75px 90px;
+    margin-left: 120px;
+}
+.heading1{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+}
+.bar{
+    font: size 23px;
+    margin-top: 25px;
+}
+.Technical-bars .bar{
+    margin-top :40px;
+}
+.Technical-bars .bar:first-child{
+    margin-top: 0;
+}
+.Technical-bars .bar:last-child{
+
+    margin-bottom: 0px;
+}
+.Technical-bars .bar .info{
+    margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span{
+    font-size: 17px;
+    font-weight: 500;
+    animation:showText 0.5s 1s linear forwards;
+}
+
+.Technical-bars .bar .info{
+    font-size: 17px;
+    font-weight: 500;
+    animation:showText 0.5s 1s linear forwards;
+    opacity:0;
+}
+.progress-line {
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #000000; /* A light gray background */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure overflow is hidden so the progress is animated properly */
+}
+
+.progress-line span {
+    position: absolute;
+    height: 100%;
+    border-radius: 5px;
+    background: #00eeff; /* Color of the actual progress */
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+@keyframes fillProgress {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+.progress-line.html span{
+    width: 90%;
+}
+.progress-line.css span{
+    width: 80%;
+}
+.progress-line.javascript span{
+    width: 70%;
+}
+.progress-line.python span{
+    width: 60%;
+}
+.progress-line.react span{
+    width: 70%;
+}
+
+.progress-line span::after{
+    position: absolute;
+    padding : 1px 8px;
+    background-color : #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px; 
+    right:-20px;
+    animation :showText 0.5s 1s linear forwards;
+    opacity:0;
+}
+.progress-line.html span::after {
+    content: '90%';
+}
+.progress-line.css span::after {
+    content: '80%';
+}
+.progress-line.javascript span::after {
+    content: '70%';
+}
+.progress-line.python span::after {
+    content: '60%';
+}
+.progress-line.react span::after {
+    content: '70%';
+}
+
+.progress-line span::before{
+    content : "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border : 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    top: -10px;
+    right:0;
+    animation:showText 0.5s 1s linear forwards;
+    opacity:0;
+}
+
+@keyframes showText {
+    100% { opacity: 1; }
+}
+/* Container for radial bars */
+.radial-bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Ensures that the items wrap if the screen is small */
+}
+
+/* Individual radial bar container */
+.radial-bar {
+    width: 150px;
+    height: 170px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SVG container and the circle */
+.radial-bar svg {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+/* Background circle */
+.radial-bar .progress-bar {
+    fill: none;
+    stroke: #e6e6e6; /* Light grey background circle */
+    stroke-width: 10;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 0;
+}
+
+/* Foreground circle for progress */
+.radial-bar .path {
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502; /* Start with the full offset, progress reduces this */
+    stroke-linecap: round;
+}
+
+/* Animation for each path */
+.path-1 {
+    stroke: #00eeff; /* Blue color */
+    animation: animate-path1 2s linear forwards;
+}
+
+.path-2 {
+    stroke: #ff9900; /* Orange color */
+    animation: animate-path2 2s linear forwards;
+}
+
+.path-3 {
+    stroke: #ff3333; /* Red color */
+    animation: animate-path3 2s linear forwards;
+}
+
+.path-4 {
+    stroke: #33cc33; /* Green color */
+    animation: animate-path4 2s linear forwards;
+}
+
+/* Keyframe animations for each path */
+/* Adjust stroke-dashoffset according to percentage */
+@keyframes animate-path1 {
+    100% { stroke-dashoffset: 100; }  /* 80% completion */
+}
+
+@keyframes animate-path2 {
+    100% { stroke-dashoffset: 50; }   /* 90% completion */
+}
+
+@keyframes animate-path3 {
+    100% { stroke-dashoffset: 125; }  /* 75% completion */
+}
+
+@keyframes animate-path4 {
+    100% { stroke-dashoffset: 100; }  /* 80% completion */
+}
+
+/* Styling for the percentage text */
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Skill text below the radial bar */
+.text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #dbdbdb;
+    font-weight: bold;
+    text-align: center;
+}
+/* we have to take technical and professional skill side by side */
+
+
+/* @keyframes animate {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+    
+}
+ */
